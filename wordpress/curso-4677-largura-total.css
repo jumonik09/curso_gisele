@@ -1,0 +1,46 @@
+/* Página do curso em /4677-2/. */
+body.page-id-4677 #content > .ast-container,
+body.page-id-4677 #primary,
+body.page-id-4677 #main,
+body.page-id-4677 #post-4677,
+body.page-id-4677 #post-4677 > .entry-content,
+body.page-id-4677 #post-4677 .gv-aquarela,
+body.page-id-4677 #post-4677 .gv-aquarela > section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin-inline: 0;
+}
+
+body.page-id-4677 #content > .ast-container,
+body.page-id-4677 #primary,
+body.page-id-4677 #main,
+body.page-id-4677 #post-4677,
+body.page-id-4677 #post-4677 > .entry-content {
+  padding-inline: 0;
+}
+
+body.page-id-4677 #post-4677 .gv-aquarela :is(.shell, .about) {
+  width: calc(100% - clamp(2rem, 6vw, 6rem));
+  margin-inline: auto;
+}
+
+body.page-id-4677 #post-4677 .gv-aquarela .shell > * {
+  min-width: 0;
+}
+
+/* Encosta a capa do curso no cabeçalho do site. */
+body.page-id-4677 #content,
+body.page-id-4677 #content > .ast-container,
+body.page-id-4677 #primary,
+body.page-id-4677 #main,
+body.page-id-4677 #post-4677,
+body.page-id-4677 #post-4677 > .entry-content {
+  margin-block-start: 0;
+  padding-block-start: 0;
+}
+
+body.page-id-4677 #post-4677 > .entry-header.ast-no-title.ast-header-without-markup {
+  display: none;
+}

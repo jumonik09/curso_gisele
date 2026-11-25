@@ -1,0 +1,275 @@
+:root {
+  --paper: #f7f2ea;
+  --white: #fffdf9;
+  --ink: #292522;
+  --muted: #625963;
+  --plum: #453257;
+  --plum-dark: #30243d;
+  --lavender: #e9dced;
+  --line: #daccd8;
+  --wash: url("../assets/faixa-roxa.png");
+  --display: Georgia, Times, serif;
+  --utility: Courier, monospace;
+  --radius: 12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--white); color: var(--ink); font: 1rem/1.65 Arial, sans-serif; }
+h1, h2, p, figure { margin: 0; }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+section[id] { scroll-margin-top: 1rem; }
+.shell { width: min(1120px, calc(100% - 5rem)); margin-inline: auto; }
+
+.site-header { background: var(--white); border-bottom: 1px solid var(--line); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 1.25rem; }
+.header-inner { min-height: 86px; }
+.brand img { width: 116px; height: auto; }
+nav { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(.65rem, 3vw, 2.25rem); }
+nav a, .site-footer a { font: .875rem/1.4 var(--utility); text-decoration: none; }
+nav a:hover, .site-footer a:hover { text-decoration: underline; text-underline-offset: .35em; }
+nav a:last-child { color: var(--plum); padding-bottom: .2rem; border-bottom: 1px solid currentColor; }
+
+.cover { background: linear-gradient(125deg, #fbf7ef 18%, #f3e9e9 66%, #e8d9ee); overflow: hidden; }
+.hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(3rem, 7vw, 6.25rem); }
+.hero-copy { border-inline-start: 1px solid #a98db7; padding-inline-start: clamp(1rem, 3vw, 2.5rem); }
+.label, .section-label { color: var(--plum); font: 600 .875rem/1.35 var(--utility); letter-spacing: .1em; text-transform: uppercase; }
+h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: -.058em; line-height: .99; }
+h1 { margin-block: .95rem 1.35rem; font-size: clamp(3.6rem, 7.2vw, 7rem); }
+h1 em { display: block; color: var(--plum); font-weight: 400; }
+h2 { font-size: clamp(2.6rem, 5.2vw, 4.9rem); text-wrap: balance; }
+h2 em { color: var(--plum); font-weight: 400; }
+.hero-line { font: 1.2rem/1.35 var(--display); }
+.hero-copy > p:last-of-type { margin-top: .45rem; color: var(--muted); }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 55px;
+  max-width: 100%;
+  padding: .75rem 1.75rem;
+  border: 1px solid var(--plum-dark);
+  border-radius: 100px;
+  background: var(--plum-dark);
+  color: var(--white);
+  font: 500 1rem/1.35 Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s ease, color .2s ease;
+}
+.button:active { background: #5c436b; }
+.button-secondary {
+  min-height: 46px;
+  padding: .55rem .15rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--plum);
+  text-decoration: underline;
+  text-decoration-color: #9b779e;
+  text-underline-offset: .35em;
+}
+.button-secondary:active { background: transparent; }
+.artist .button { margin-top: 1.45rem; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.15rem; margin-top: 1.55rem; }
+
+@media (hover: hover) {
+  .button:hover { background: #5c436b; }
+  .button-secondary:hover { background: transparent; text-decoration-color: currentColor; }
+}
+
+.hero-art { position: relative; isolation: isolate; justify-self: center; width: min(100%, 420px); }
+.hero-art::before {
+  position: absolute;
+  z-index: -1;
+  inset: -2rem -2.5rem -.5rem auto;
+  width: 54%;
+  background: var(--wash) right center / auto 110% no-repeat;
+  opacity: .75;
+  content: "";
+}
+.art-mat { padding: clamp(.55rem, 1.3vw, .95rem); border: 1px solid #e2d7dc; border-radius: calc(var(--radius) + .4rem); background: var(--white); }
+.hero-image { width: 100%; aspect-ratio: 1.13; border-radius: var(--radius); object-fit: cover; object-position: center 46%; }
+
+.preview { --band-color: var(--plum-dark); padding-block: clamp(3.75rem, 7vw, 6.35rem); background: linear-gradient(155deg, var(--plum-dark) 10%, #3f2e4b 64%, #4e3859); color: var(--white); }
+.preview-layout { display: grid; grid-template-columns: .72fr 1.28fr; align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+.preview .section-label { color: #dbc2e7; }
+.section-intro h2, .about-copy h2 { margin-top: .85rem; }
+.section-intro > p:not(.section-label), .about-copy > p:not(.section-label) { max-width: 39ch; margin-top: .9rem; }
+.preview .section-intro > p:not(.section-label) { color: #eadfea; }
+.preview-frame { width: min(100%, 570px); min-width: 0; justify-self: center; }
+.player { position: relative; isolation: isolate; display: grid; place-items: center; overflow: hidden; aspect-ratio: 16 / 9; padding: 1rem; border: 1px solid #d8c2e17a; border-radius: var(--radius); background: radial-gradient(ellipse at 48% 40%, #533f61, #33263f 76%); }
+.player video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #241a2b; }
+.player-status { margin: 0; color: #f7edf6; font: italic clamp(1.15rem, 2.4vw, 1.65rem)/1.3 var(--display); text-align: center; }
+.play { display: grid; place-items: center; width: 65px; aspect-ratio: 1; border: 1px solid white; border-radius: 50%; background: #30243de6; box-shadow: 0 5px 16px #21142f7a; color: white; cursor: pointer; }
+.play:hover { background: var(--plum); }
+.play::before { content: ""; margin-left: 4px; border-block: 8px solid transparent; border-inline-start: 13px solid currentColor; }
+
+.course-section {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(140deg, #fbf7f2 35%, #f5e9ef 100%);
+}
+.course-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 38%;
+  background: linear-gradient(90deg, #fbf7f2 0%, #fbf7f270 42%, #fbf7f226 74%),
+    linear-gradient(0deg, #fbf7f2 0%, #fbf7f200 30%, #fbf7f200 76%, #fbf7f2 100%),
+    url("../assets/aquarela-passaro.jpg") 58% center / cover no-repeat;
+  opacity: .72;
+  content: "";
+}
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); width: min(1010px, calc(100% - 5rem)); padding-block: clamp(4rem, 8vw, 7rem); }
+.atelier-portrait { position: relative; isolation: isolate; width: min(100%, 320px); padding: 0; justify-self: center; }
+.atelier-portrait::before { position: absolute; z-index: -1; inset: 11% -.6rem -.65rem 18%; border-radius: var(--radius); background: var(--lavender) var(--wash) right center / auto 115% no-repeat; content: ""; }
+.portrait-image { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); object-fit: cover; object-position: center 40%; }
+.about-copy > p:not(.section-label) { color: var(--muted); }
+.trail { max-width: 45ch; margin: 1.6rem 0 0; padding-inline-start: 1.35rem; }
+.trail li { padding: .55rem 0 .6rem .3rem; border-top: 1px solid var(--line); }
+.trail li::marker { color: var(--plum); font: .875rem var(--utility); }
+.trail strong { display: block; color: var(--plum); font: 1.22rem/1.4 var(--display); }
+.trail span { display: block; margin-top: .15rem; color: var(--muted); font-size: .94rem; }
+
+.artist { --band-color: var(--paper); background: linear-gradient(125deg, var(--paper) 12%, #f5e9e5 63%, #eee4f1); }
+.artist-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: clamp(2rem, 8vw, 7rem); padding-block: clamp(4rem, 8vw, 7rem); }
+.artist .section-intro > p:not(.section-label) { max-width: 49ch; color: var(--muted); }
+
+.course-section { --band-color: #fbf7f2; }
+.site-footer { --band-color: #66748c; }
+.preview, .artist, .site-footer { position: relative; isolation: isolate; }
+.preview { --edge-shade: #150e2070; }
+.site-footer { --edge-shade: #2634484d; }
+.preview::before, .course-section::after, .artist::before, .course-offer::before, .site-footer::before {
+  position: absolute;
+  inset: auto 0 calc(100% - 1px);
+  height: clamp(13px, 3.1vw, 40px);
+  background: linear-gradient(180deg, var(--edge-shade, #45325736), transparent 91%), var(--band-color);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 42' preserveAspectRatio='none'%3E%3Cpath d='M0 24 C132 23 223 3 386 7 S657 28 827 22 S1082 12 1200 3 V42 H0 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  pointer-events: none;
+  content: "";
+}
+.course-section::after { transform: scaleX(-1); }
+.artist::before { height: clamp(16px, 3.6vw, 46px); }
+.site-footer::before { height: clamp(8px, 1.9vw, 24px); }
+.course-offer { --band-color: #f3e9e4; position: relative; isolation: isolate; background:
+    radial-gradient(ellipse at 86% 46%, #b998c651 0%, #cfb4d526 28%, transparent 56%),
+    linear-gradient(135deg, var(--band-color), #faf4ed 55%, #eadced); }
+.course-offer::before { transform: scaleX(-1); }
+.offer-inner { padding-block: clamp(3.25rem, 7vw, 5.7rem); text-align: center; }
+.offer-inner h2::after { display: block; width: 60px; height: 6px; margin: .85rem auto 0; background: url("../assets/pincelada-terracota.png") center / contain no-repeat; opacity: .75; content: ""; }
+.offer-phrase { max-width: 30ch; margin: .85rem auto .55rem; color: var(--plum); font: italic clamp(1.15rem, 2.4vw, 1.55rem)/1.4 var(--display); text-wrap: balance; }
+.offer-price { margin: .55rem 0 1.35rem; color: var(--muted); font-size: .95rem; }
+.offer-inner .button {
+  border-color: #d2a7eb;
+  box-shadow:
+    0 0 0 1px #e6c9f5,
+    0 0 9px 1px #c78bea9c,
+    0 0 23px 2px #ac6eca58,
+    0 4px 9px #45325720;
+}
+.offer-inner .button:focus-visible {
+  outline-color: var(--plum);
+  outline-offset: 6px;
+}
+.site-footer { background: #66748c; color: #fff; text-align: center; font: 400 11pt/28px var(--utility); -webkit-font-smoothing: antialiased; }
+.site-footer .shell { width: min(1200px, calc(100% - 50px)); }
+.footer-main { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 50px; padding-block: 20px 0; min-height: 300px; }
+.site-footer .brand { display: block; width: fit-content; margin: 0 auto 20px; }
+.site-footer .brand img { width: 300px; height: auto; }
+.site-footer a { color: inherit; font: inherit; }
+.footer-contact { padding-top: 27px; }
+.footer-contact h2 { margin: 0 0 43px; font-size: 36px; font-weight: 700; line-height: 42px; letter-spacing: normal; }
+.footer-contact a { color: #f4f5f6; }
+.footer-social { display: flex; justify-content: center; gap: 12px; padding: 20px; }
+.footer-social a { display: grid; place-items: center; width: 45px; height: 45px; }
+.footer-social svg { width: 29px; height: 29px; fill: currentColor; }
+.footer-social a:hover { color: #344b38; }
+.footer-bottom { border-top: 1px solid #273c2f; }
+.footer-meta { display: grid; align-content: center; justify-items: center; min-height: 130px; padding-block: 25px; }
+
+.hero-copy .label::after, .preview .section-label::after, .about-copy .section-label::after, .artist .section-label::after {
+  display: block;
+  width: 84px;
+  height: 12px;
+  margin-top: .65rem;
+  background: url("../assets/pincelada-terracota.png") center / contain no-repeat;
+  content: "";
+}
+.hero-copy .label::after, .artist .section-label::after {
+  width: 112px;
+  height: 15px;
+  background: url("../assets/pincelada-terracota.png") left 3px bottom / 65px auto no-repeat,
+    var(--wash) right 10px center / 55px 76px no-repeat;
+}
+.about-copy .section-label::after { transform: rotate(-3deg); }
+
+@media (max-width: 760px) {
+  .shell, .about { width: calc(100% - 2.5rem); }
+  .hero, .preview-layout, .about, .artist-layout { grid-template-columns: 1fr; gap: 1.75rem; }
+  .hero { padding-block: 2.45rem 2.1rem; }
+  .hero-art { width: min(calc(100% - 1rem), 350px); }
+  .hero-art::before { inset: -.8rem -.7rem -.3rem auto; }
+  .hero-image { aspect-ratio: 5 / 4; }
+  .preview, .about { padding-block: 3.25rem; }
+  .preview-frame { width: min(100%, 470px); }
+  .atelier-portrait { width: min(100%, 275px); }
+  .about-copy { grid-row: 1; }
+  .about { padding-bottom: clamp(230px, 63vw, 340px); }
+  .course-section::before {
+    inset: auto 0 0;
+    height: clamp(255px, 68vw, 380px);
+    background: linear-gradient(180deg, #fbf7f2 0%, #fbf7f200 29%, #fbf7f200 76%, #fbf7f2 100%),
+      url("../assets/aquarela-passaro.jpg") center 54% / cover no-repeat;
+  }
+  .about-copy { min-width: 0; }
+  .trail { margin-top: 1.25rem; }
+  .footer-main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-content: start;
+    gap: 48px;
+    min-height: 520px;
+  }
+  .footer-contact { padding-top: 0; }
+  .footer-contact h2 { margin-bottom: 36px; font-size: 34px; }
+  .footer-contact p { font-size: .875rem; line-height: 26px; }
+  .footer-social { min-height: 106px; align-items: start; gap: 0; padding: 26px 10px 0; }
+  .footer-social a { width: 40px; height: 40px; }
+  .footer-social svg { width: 24px; height: 24px; }
+  .footer-meta { min-height: 142px; padding-bottom: 33px; }
+}
+
+@media (max-width: 480px) {
+  .header-inner { min-height: 72px; gap: .65rem; }
+  .header-inner .brand img { width: 77px; }
+  nav { flex-wrap: nowrap; column-gap: clamp(.45rem, 2.4vw, .75rem); }
+  nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .8125rem; }
+  nav a:last-child { padding-bottom: 0; border-bottom: 0; text-decoration: underline; text-underline-offset: .3em; }
+  .hero-copy { padding-inline-start: .9rem; }
+  h1 { font-size: clamp(3.1rem, 14.8vw, 4.05rem); }
+  h2 { font-size: clamp(2.45rem, 9.4vw, 3.15rem); }
+  .hero-actions .button:not(.button-secondary) { padding-inline: 1.25rem; }
+  .hero-actions { column-gap: .75rem; }
+}
+
+@media (max-width: 360px) {
+  .shell, .about { width: calc(100% - 2rem); }
+  .header-inner .brand img { width: 65px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .arrived { animation: settle .48s ease-out both; }
+  @keyframes settle {
+    from { opacity: .82; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}

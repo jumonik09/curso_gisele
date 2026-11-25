@@ -1,0 +1,399 @@
+<style>
+.gv-aquarela {
+  --paper: #f7f2ea;
+  --white: #fffdf9;
+  --ink: #292522;
+  --muted: #625963;
+  --plum: #453257;
+  --plum-dark: #30243d;
+  --lavender: #e9dced;
+  --line: #daccd8;
+  --wash: url("https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/faixa-roxa.png");
+  --display: Georgia, Times, serif;
+  --utility: Courier, monospace;
+  --radius: 12px;
+}
+
+.gv-aquarela *, .gv-aquarela *::before, .gv-aquarela *::after { box-sizing: border-box; }
+.gv-aquarela [hidden] { display: none !important; }
+.gv-aquarela { width: 100%; margin: 0; background: var(--white); color: var(--ink); font: 1rem/1.65 Arial, sans-serif; }
+.gv-aquarela h1, .gv-aquarela h2, .gv-aquarela p, .gv-aquarela figure { margin: 0; }
+.gv-aquarela img, .gv-aquarela video { display: block; max-width: 100%; }
+.gv-aquarela a { color: inherit; }
+.gv-aquarela :focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.gv-aquarela section[id] { scroll-margin-top: 1rem; }
+.gv-aquarela .shell { width: min(1120px, calc(100% - 5rem)); margin-inline: auto; }
+
+.gv-aquarela .cover { background: linear-gradient(125deg, #fbf7ef 18%, #f3e9e9 66%, #e8d9ee); overflow: hidden; }
+.gv-aquarela .hero { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: clamp(2rem, 6vw, 6rem); padding-block: clamp(3rem, 7vw, 6.25rem); }
+.gv-aquarela .hero-copy { border-inline-start: 1px solid #a98db7; padding-inline-start: clamp(1rem, 3vw, 2.5rem); }
+.gv-aquarela .label, .gv-aquarela .section-label { color: var(--plum); font: 600 .875rem/1.35 var(--utility); letter-spacing: .1em; text-transform: uppercase; }
+.gv-aquarela h1, .gv-aquarela h2 { color: inherit; font-family: var(--display); font-weight: 400; letter-spacing: -.058em; line-height: .99; }
+.gv-aquarela h1 { margin-block: .95rem 1.35rem; font-size: clamp(3.6rem, 7.2vw, 7rem); }
+.gv-aquarela h1 em { display: block; color: var(--plum); font-weight: 400; }
+.gv-aquarela h2 { font-size: clamp(2.6rem, 5.2vw, 4.9rem); text-wrap: balance; }
+.gv-aquarela h2 em { color: var(--plum); font-weight: 400; }
+.gv-aquarela .hero-line { font: 1.2rem/1.35 var(--display); }
+.gv-aquarela .hero-copy > p:last-of-type { margin-top: .45rem; color: var(--muted); }
+.gv-aquarela a.button,
+.gv-aquarela a.button:hover,
+.gv-aquarela a.button:focus,
+.gv-aquarela a.button:active {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  max-width: 100%;
+  padding: 1.75rem clamp(1.5rem, 4vw, 2.25rem);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #fff;
+  font: 700 clamp(1rem, 2.5vw, 1.25rem)/1.2 "Courier New", Courier, monospace;
+  letter-spacing: .02em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+.gv-aquarela a.button::before {
+  position: absolute;
+  inset: 8px 7px 9px 6px;
+  z-index: -1;
+  background: url("https://gisellevargas.com.br/wp-content/uploads/2026/05/brushstroke-button-bg-green.svg") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 1px 0 rgb(30 18 36 / 22%));
+  content: "";
+}
+.gv-aquarela a.button:focus-visible {
+  outline: 2px solid var(--plum);
+  outline-offset: 2px;
+}
+.gv-aquarela .artist .button { margin-top: 1.45rem; }
+.gv-aquarela .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.15rem; margin-top: 1.55rem; }
+
+
+.gv-aquarela .hero-art { position: relative; isolation: isolate; justify-self: center; width: min(100%, 420px); }
+.gv-aquarela .hero-art::before {
+  position: absolute;
+  z-index: -1;
+  inset: -2rem -2.5rem -.5rem auto;
+  width: 54%;
+  background: var(--wash) right center / auto 110% no-repeat;
+  opacity: .75;
+  content: "";
+}
+.gv-aquarela .art-mat { padding: clamp(.55rem, 1.3vw, .95rem); border: 1px solid #e2d7dc; border-radius: calc(var(--radius) + .4rem); background: var(--white); }
+.gv-aquarela .hero-image { width: 100%; aspect-ratio: 1.13; border-radius: var(--radius); object-fit: cover; object-position: center 46%; }
+
+.gv-aquarela .preview { --band-color: var(--plum-dark); padding-block: clamp(3.75rem, 7vw, 6.35rem); background: linear-gradient(155deg, var(--plum-dark) 10%, #3f2e4b 64%, #4e3859); color: var(--white); }
+.gv-aquarela .preview-layout { display: grid; grid-template-columns: .72fr 1.28fr; align-items: center; gap: clamp(2rem, 6vw, 6rem); }
+.gv-aquarela .preview .section-label { color: #dbc2e7; }
+.gv-aquarela .section-intro h2, .gv-aquarela .about-copy h2 { margin-top: .85rem; }
+.gv-aquarela .section-intro > p:not(.section-label), .gv-aquarela .about-copy > p:not(.section-label) { max-width: 39ch; margin-top: .9rem; }
+.gv-aquarela .preview .section-intro > p:not(.section-label) { color: #eadfea; }
+.gv-aquarela .preview-frame { width: min(100%, 570px); min-width: 0; justify-self: center; }
+.gv-aquarela .player { position: relative; isolation: isolate; display: grid; place-items: center; overflow: hidden; aspect-ratio: 16 / 9; padding: 1rem; border: 1px solid #d8c2e17a; border-radius: var(--radius); background: radial-gradient(ellipse at 48% 40%, #533f61, #33263f 76%); }
+.gv-aquarela .player video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: #241a2b; }
+.gv-aquarela .player-status { margin: 0; color: #f7edf6; font: italic clamp(1.15rem, 2.4vw, 1.65rem)/1.3 var(--display); text-align: center; }
+.gv-aquarela .play { display: grid; place-items: center; width: 65px; aspect-ratio: 1; border: 1px solid white; border-radius: 50%; background: #30243de6; box-shadow: 0 5px 16px #21142f7a; color: white; cursor: pointer; }
+.gv-aquarela .play:hover { background: var(--plum); }
+.gv-aquarela .play::before { content: ""; margin-left: 4px; border-block: 8px solid transparent; border-inline-start: 13px solid currentColor; }
+
+.gv-aquarela .course-section {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(140deg, #fbf7f2 35%, #f5e9ef 100%);
+}
+.gv-aquarela .course-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 38%;
+  background: linear-gradient(90deg, #fbf7f2 0%, #fbf7f270 42%, #fbf7f226 74%),
+    linear-gradient(0deg, #fbf7f2 0%, #fbf7f200 30%, #fbf7f200 76%, #fbf7f2 100%),
+    url("https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/aquarela-passaro.jpg") 58% center / cover no-repeat;
+  opacity: .72;
+  content: "";
+}
+.gv-aquarela .about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .95fr); width: min(1010px, calc(100% - 5rem)); padding-block: clamp(4rem, 8vw, 7rem); }
+.gv-aquarela .atelier-portrait { position: relative; isolation: isolate; width: min(100%, 320px); padding: 0; justify-self: center; }
+.gv-aquarela .atelier-portrait::before { position: absolute; z-index: -1; inset: 11% -.6rem -.65rem 18%; border-radius: var(--radius); background: var(--lavender) var(--wash) right center / auto 115% no-repeat; content: ""; }
+.gv-aquarela .portrait-image { width: 100%; aspect-ratio: 4 / 5; border-radius: var(--radius); object-fit: cover; object-position: center 40%; }
+.gv-aquarela .about-copy > p:not(.section-label) { color: var(--muted); }
+.gv-aquarela .trail { max-width: 45ch; margin: 1.6rem 0 0; padding-inline-start: 1.35rem; }
+.gv-aquarela .trail li { padding: .55rem 0 .6rem .3rem; border-top: 1px solid var(--line); }
+.gv-aquarela .trail li::marker { color: var(--plum); font: .875rem var(--utility); }
+.gv-aquarela .trail strong { display: block; color: var(--plum); font: 1.22rem/1.4 var(--display); }
+.gv-aquarela .trail span { display: block; margin-top: .15rem; color: var(--muted); font-size: .94rem; }
+
+.gv-aquarela .artist { --band-color: var(--paper); background: linear-gradient(125deg, var(--paper) 12%, #f5e9e5 63%, #eee4f1); }
+.gv-aquarela .artist-layout { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: clamp(2rem, 8vw, 7rem); padding-block: clamp(4rem, 8vw, 7rem); }
+.gv-aquarela .artist .section-intro > p:not(.section-label) { max-width: 49ch; color: var(--muted); }
+
+.gv-aquarela .course-section { --band-color: #fbf7f2; }
+
+.gv-aquarela .preview, .gv-aquarela .artist { position: relative; isolation: isolate; }
+.gv-aquarela .preview { --edge-shade: #150e2070; }
+
+.gv-aquarela .preview::before, .gv-aquarela .course-section::after, .gv-aquarela .artist::before, .gv-aquarela .course-offer::before {
+  position: absolute;
+  inset: auto 0 calc(100% - 1px);
+  height: clamp(13px, 3.1vw, 40px);
+  background: linear-gradient(180deg, var(--edge-shade, #45325736), transparent 91%), var(--band-color);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 42' preserveAspectRatio='none'%3E%3Cpath d='M0 24 C132 23 223 3 386 7 S657 28 827 22 S1082 12 1200 3 V42 H0 Z'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  pointer-events: none;
+  content: "";
+}
+.gv-aquarela .course-section::after { transform: scaleX(-1); }
+.gv-aquarela .artist::before { height: clamp(16px, 3.6vw, 46px); }
+
+.gv-aquarela .course-offer { --band-color: #f3e9e4; position: relative; isolation: isolate; background:
+    radial-gradient(ellipse at 86% 46%, #b998c651 0%, #cfb4d526 28%, transparent 56%),
+    linear-gradient(135deg, var(--band-color), #faf4ed 55%, #eadced); }
+.gv-aquarela .course-offer::before { transform: scaleX(-1); }
+.gv-aquarela .offer-inner { padding-block: clamp(3.25rem, 7vw, 5.7rem); text-align: center; }
+.gv-aquarela .offer-inner h2::after { display: block; width: 60px; height: 6px; margin: .85rem auto 0; background: url("https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/pincelada-terracota.png") center / contain no-repeat; opacity: .75; content: ""; }
+.gv-aquarela .offer-phrase { max-width: 30ch; margin: .85rem auto .55rem; color: var(--plum); font: italic clamp(1.15rem, 2.4vw, 1.55rem)/1.4 var(--display); text-wrap: balance; }
+.gv-aquarela .offer-price { margin: .55rem 0 1.35rem; color: var(--muted); font-size: .95rem; }
+
+.gv-aquarela .hero-copy .label::after, .gv-aquarela .preview .section-label::after, .gv-aquarela .about-copy .section-label::after, .gv-aquarela .artist .section-label::after {
+  display: block;
+  width: 84px;
+  height: 12px;
+  margin-top: .65rem;
+  background: url("https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/pincelada-terracota.png") center / contain no-repeat;
+  content: "";
+}
+.gv-aquarela .hero-copy .label::after, .gv-aquarela .artist .section-label::after {
+  width: 112px;
+  height: 15px;
+  background: url("https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/pincelada-terracota.png") left 3px bottom / 65px auto no-repeat,
+    var(--wash) right 10px center / 55px 76px no-repeat;
+}
+.gv-aquarela .about-copy .section-label::after { transform: rotate(-3deg); }
+
+@media (max-width: 760px) {
+  .gv-aquarela .shell, .gv-aquarela .about { width: calc(100% - 2.5rem); }
+  .gv-aquarela .hero, .gv-aquarela .preview-layout, .gv-aquarela .about, .gv-aquarela .artist-layout { grid-template-columns: 1fr; gap: 1.75rem; }
+  .gv-aquarela .hero { padding-block: 2.45rem 2.1rem; }
+  .gv-aquarela .hero-art { width: min(calc(100% - 1rem), 350px); }
+  .gv-aquarela .hero-art::before { inset: -.8rem -.7rem -.3rem auto; }
+  .gv-aquarela .hero-image { aspect-ratio: 5 / 4; }
+  .gv-aquarela .preview, .gv-aquarela .about { padding-block: 3.25rem; }
+  .gv-aquarela .preview-frame { width: min(100%, 470px); }
+  .gv-aquarela .atelier-portrait { width: min(100%, 275px); }
+  .gv-aquarela .about-copy { grid-row: 1; }
+  .gv-aquarela .about { padding-bottom: clamp(230px, 63vw, 340px); }
+  .gv-aquarela .course-section::before {
+    inset: auto 0 0;
+    height: clamp(255px, 68vw, 380px);
+    background: linear-gradient(180deg, #fbf7f2 0%, #fbf7f200 29%, #fbf7f200 76%, #fbf7f2 100%),
+      url("https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/aquarela-passaro.jpg") center 54% / cover no-repeat;
+  }
+  .gv-aquarela .about-copy { min-width: 0; }
+  .gv-aquarela .trail { margin-top: 1.25rem; }
+
+}
+
+@media (max-width: 480px) {
+
+  .gv-aquarela .hero-copy { padding-inline-start: .9rem; }
+  .gv-aquarela h1 { font-size: clamp(3.1rem, 14.8vw, 4.05rem); }
+  .gv-aquarela h2 { font-size: clamp(2.45rem, 9.4vw, 3.15rem); }
+  .gv-aquarela .hero-actions { column-gap: .75rem; }
+}
+
+@media (max-width: 360px) {
+  .gv-aquarela .shell, .gv-aquarela .about { width: calc(100% - 2rem); }
+
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gv-aquarela .arrived { animation: gv-aquarela-settle .48s ease-out both; }
+  @keyframes gv-aquarela-settle {
+    from { opacity: .82; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gv-aquarela .button { transition: none; }
+}
+
+/* Página do curso em /4677-2/. */
+body.page-id-4677 #content > .ast-container,
+body.page-id-4677 #primary,
+body.page-id-4677 #main,
+body.page-id-4677 #post-4677,
+body.page-id-4677 #post-4677 > .entry-content,
+body.page-id-4677 #post-4677 .gv-aquarela,
+body.page-id-4677 #post-4677 .gv-aquarela > section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin-inline: 0;
+}
+
+body.page-id-4677 #content > .ast-container,
+body.page-id-4677 #primary,
+body.page-id-4677 #main,
+body.page-id-4677 #post-4677,
+body.page-id-4677 #post-4677 > .entry-content {
+  padding-inline: 0;
+}
+
+body.page-id-4677 #post-4677 .gv-aquarela :is(.shell, .about) {
+  width: calc(100% - clamp(2rem, 6vw, 6rem));
+  margin-inline: auto;
+}
+
+body.page-id-4677 #post-4677 .gv-aquarela .shell > * {
+  min-width: 0;
+}
+
+/* Encosta a capa do curso no cabeçalho do site. */
+body.page-id-4677 #content,
+body.page-id-4677 #content > .ast-container,
+body.page-id-4677 #primary,
+body.page-id-4677 #main,
+body.page-id-4677 #post-4677,
+body.page-id-4677 #post-4677 > .entry-content {
+  margin-block-start: 0;
+  padding-block-start: 0;
+}
+
+body.page-id-4677 #post-4677 > .entry-header.ast-no-title.ast-header-without-markup {
+  display: none;
+}
+</style>
+
+<div class="gv-aquarela" data-gv-aquarela>
+  <section class="cover" aria-labelledby="titulo">
+    <div class="hero shell">
+      <div class="hero-copy">
+        <p class="label">Curso com Giselle Vargas</p>
+        <h1 id="titulo">Trilha da <em>Aquarela</em></h1>
+        <p class="hero-line">A beleza de criar com aquarela.</p>
+        <p>Um encontro entre cores, criatividade e expressão.</p>
+        <div class="hero-actions">
+          <a class="button" href="#inscricoes">Quero Participar</a>
+          <a class="button button-secondary" href="#previa">Conheça o curso</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <div class="art-mat">
+          <img decoding="async" class="hero-image" src="https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/aquarela.jpg" alt="Detalhe de um olho verde pintado em aquarela por Giselle Vargas" fetchpriority="high">
+        </div>
+      </figure>
+    </div>
+  </section>
+  <section class="preview" id="previa" aria-labelledby="previa-titulo">
+    <div class="shell preview-layout">
+      <div class="section-intro">
+        <p class="section-label">Prévia do curso</p>
+        <h2 id="previa-titulo">Descubra a experiência.</h2>
+        <p>Um convite para explorar a aquarela e descobrir a beleza de cada pincelada.</p>
+      </div>
+      <div class="preview-frame player" data-preview>
+        <p class="player-status" role="status">Vídeo em breve</p>
+        <button type="button" class="play" aria-label="Reproduzir a prévia do curso" hidden></button>
+        <!-- Para ativar a prévia, acrescente data-source com o URL direto do MP4 ao elemento video. -->
+        <video controls playsinline preload="metadata" aria-label="Prévia da Trilha da Aquarela, com Giselle Vargas" hidden></video>
+      </div>
+    </div>
+  </section>
+  <section class="course-section" aria-labelledby="sobre-titulo">
+    <div class="about shell">
+      <div class="about-copy">
+        <p class="section-label">Sobre o curso</p>
+        <h2 id="sobre-titulo">Permita-se <em>criar.</em></h2>
+        <p>Uma experiência para explorar cores, aprender novas técnicas e descobrir sua própria expressão através da aquarela.</p>
+        <ol class="trail" aria-label="Roteiro da Trilha da Aquarela">
+          <li><strong>A aventura da aquarela</strong><span>Conheça Giselle e monte seu kit básico.</span></li>
+          <li><strong>Pinceladas básicas</strong><span>Explore degradês, luz, sombra e transparências.</span></li>
+          <li><strong>Limão siciliano</strong><span>Use cores complementares para pintar as sombras.</span></li>
+          <li><strong>Flores do campo</strong><span>Pinte um fundo suave com camadas, manchas e respingos.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+  <section class="artist" id="giselle" aria-labelledby="giselle-titulo">
+    <div class="shell artist-layout">
+      <figure class="atelier-portrait">
+        <img decoding="async" class="portrait-image" src="https://gisellevargas.com.br/wp-content/uploads/trilha-da-aquarela/giselle.jpg" alt="Giselle Vargas diante de uma porta azul" loading="lazy">
+      </figure>
+      <div class="section-intro">
+        <p class="section-label">Quem conduz a trilha</p>
+        <h2 id="giselle-titulo">Giselle <em>Vargas</em></h2>
+        <p>Artista visual de Belo Horizonte, Giselle é formada em Design de Produtos pela UEMG. Ilustrou livros infantis e participou de exposições no Brasil e na Europa.</p>
+        <p>Seu trabalho passa pela aquarela em papel e tecido, pelo desenho de rua e pelo bordado. Ela também ensina aquarela em aulas presenciais e oficinas.</p>
+        <a class="button button-secondary" href="https://gisellevargas.com.br/about/">Conheça a trajetória da Giselle</a>
+      </div>
+    </div>
+  </section>
+  <section class="course-offer" id="inscricoes" aria-labelledby="comece-agora-titulo">
+    <div class="shell offer-inner">
+      <h2 id="comece-agora-titulo">Comece <em>agora.</em></h2>
+      <p class="offer-phrase">Trilhar, Caminhar, Devagar, Descobrir&#8230;</p>
+      <p class="offer-price">Valor em breve</p>
+      <a class="button" href="https://wa.me/5531991029957?text=Ol%C3%A1%2C%20Giselle!%20Quero%20come%C3%A7ar%20a%20Trilha%20da%20Aquarela.%20Pode%20me%20avisar%20quando%20o%20valor%20e%20as%20inscri%C3%A7%C3%B5es%20estiverem%20dispon%C3%ADveis%3F">Quero pintar com você</a>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(() => {
+  const course = document.querySelector("[data-gv-aquarela]");
+  if (!course) return;
+
+  const preview = course.querySelector("[data-preview]");
+  const video = preview?.querySelector("video[data-source]");
+  const source = video?.dataset.source;
+
+  if (source) {
+    const play = preview.querySelector(".play");
+    const status = preview.querySelector(".player-status");
+
+    video.addEventListener("loadedmetadata", () => {
+      status.hidden = true;
+      play.hidden = false;
+    }, { once: true });
+
+    video.addEventListener("error", () => {
+      status.textContent = video.hidden ? "Vídeo em breve" : "Vídeo indisponível no momento";
+      video.hidden = true;
+      play.hidden = true;
+      status.hidden = false;
+    });
+
+    play.addEventListener("click", () => {
+      play.hidden = true;
+      video.hidden = false;
+      video.focus();
+      video.play().catch(() => {
+        // Os controles nativos permitem tentar novamente.
+      });
+    });
+
+    video.src = source;
+  }
+
+  if (!window.matchMedia("(prefers-reduced-motion: no-preference)").matches
+      || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver((entries, currentObserver) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add("arrived");
+      currentObserver.unobserve(entry.target);
+    }
+  }, { threshold: 0.15 });
+
+  course.querySelectorAll(".preview .section-intro, .about-copy, .artist .section-intro, .offer-inner")
+    .forEach((section) => observer.observe(section));
+})();
+</script>
